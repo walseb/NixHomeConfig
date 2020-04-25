@@ -1,0 +1,1 @@
+Put in ~$HOME/.config/nixpkgs/home-manager~ or ~$HOME/.nixpkgs/~
