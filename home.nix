@@ -3,6 +3,8 @@
 {
   programs.home-manager.enable = true;
 
+  imports = [ ./device.nix ];
+
   nixpkgs.config.allowUnfree = true;
 
   programs.git = {
@@ -37,7 +39,6 @@
     extraConfig = "allow-emacs-pinentry";
     # grabKeyboardAndMouse = false;
   };
-
 
   home.packages = with pkgs; [
     lm_sensors
@@ -100,6 +101,8 @@
 
     # Closed source
     spotify
+
+    next
   ];
 
   home.stateVersion = "20.03";
