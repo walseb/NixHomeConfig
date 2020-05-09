@@ -1,5 +1,6 @@
-*
+/*
 
 !.gitignore
 !device-template.nix
 !home.nix
+!/modules/

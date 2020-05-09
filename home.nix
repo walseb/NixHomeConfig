@@ -40,6 +40,10 @@
     # grabKeyboardAndMouse = false;
   };
 
+  # xsession.pointerCursor.size = 32;
+  xsession.pointerCursor.package = pkgs.vanilla-dmz;
+  xsession.pointerCursor.name = "Vanilla-DMZ";
+
   home.packages = with pkgs; [
     lm_sensors
 
@@ -103,6 +107,8 @@
     spotify
 
     next
+
+    pandoc
   ];
 
   home.stateVersion = "20.03";
