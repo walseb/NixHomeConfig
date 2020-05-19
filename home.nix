@@ -45,11 +45,25 @@
   xsession.pointerCursor.name = "Vanilla-DMZ";
 
   home.packages = with pkgs; [
+    # mpd
+    # mpc_cli
+
+    brightnessctl
+
+    git
+    git-lfs
+
+    gnupg
+
+    pavucontrol
+
     lm_sensors
 
     ripgrep
 
-    atool unzip p7zip
+    atool unzip
+    # TODO Find replacement
+    # p7zip
 
     direnv lorri
 
@@ -65,10 +79,9 @@
 
     cmake libtool gnumake
 
-    # pdftools
-    poppler
+    haskellPackages.structured-haskell-mode pinentry_emacs libvterm
 
-    haskellPackages.structured-haskell-mode harfbuzz pinentry_emacs libvterm
+    emacs
 
     # haskellPackages.glance - not on hackage
     # haskellPackages.visualize-cbn - marked as broken

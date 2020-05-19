@@ -2,7 +2,9 @@
 {
   imports = [
     ./modules/email.nix
-    ./modules/games/cataclysm-dda/cataclysm-dda-git-latest.nix
+    # ./modules/games/cataclysm-dda/cataclysm-dda-git-latest.nix
+    # ./modules/build-emacs.nix
+    # ./modules/art.nix
   ];
   # programs.git = {
   #   signing = {
