@@ -1,55 +1,26 @@
 { config, pkgs, ... }:
 
 {
+  home.stateVersion = "20.03";
+
   programs.home-manager.enable = true;
 
-  imports = [ ./device.nix ];
+  imports = [ ./device.nix
+              ./modules/firefox.nix
+              ./modules/notifications.nix
+              ./modules/git.nix
+              ./modules/direnv.nix
+              ./modules/gpg.nix
+              ./modules/visual.nix
+            ];
 
+  # Required by spotify
   nixpkgs.config.allowUnfree = true;
 
-  programs.git = {
-    enable = true;
-    userName = "Sebastian Wålinder";
-    userEmail = "s.walinder@gmail.com";
-  };
-
-  programs.direnv = {
-    enable = true;
-    enableBashIntegration = true;
-  };
-
-  programs.firefox = {
-    profiles.my.settings = {"extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";};
-
-    extensions = with pkgs.nur.repos.rycee.firefox-addons;
-      [
-        https-everywhere
-      ];
-  };
-
-  # nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
-
-  services.lorri.enable = true;
-
-  services.gpg-agent = {
-    enable = true;
-    pinentryFlavor = "emacs";
-
-    # pinentry-program /run/current-system/sw/bin/pinentry-emacs
-    extraConfig = "allow-emacs-pinentry";
-    # grabKeyboardAndMouse = false;
-  };
-
-  # xsession.pointerCursor.size = 32;
-  xsession.pointerCursor.package = pkgs.vanilla-dmz;
-  xsession.pointerCursor.name = "Vanilla-DMZ";
-
   home.packages = with pkgs; [
+    # xfce.xfce4-notifyd
     # mpd
     # mpc_cli
-
-    brightnessctl
-
     git
     git-lfs
 
@@ -65,15 +36,13 @@
     # TODO Find replacement
     # p7zip
 
-    direnv lorri
-
     # mail
-    isync msmtp mu
+    isync msmtp
 
     gimp
     redshift
 
-    firefox plasma-browser-integration w3m
+    w3m
 
     shellcheck
 
@@ -98,9 +67,14 @@
     binutils
 
     # Haskell
-    ghc cabal-install hlint haskellPackages.hoogle
+    # haskell.compiler.ghc882 # cabal-install
+    cabal-install
+
+    hlint haskellPackages.hoogle
 
     haskellPackages.hp2pretty # haskellPackages.threadscope # haskellPackages.eventlog2html
+
+    # haskellPackages.retrie
 
     ormolu
     nixfmt
@@ -122,7 +96,19 @@
     next
 
     pandoc
-  ];
 
-  home.stateVersion = "20.03";
+    cachix
+
+    # iosevka
+    (import ./modules/fonts/scientifica.nix)
+    # (import ./modules/fonts/BlockZone.nix)
+
+    ultimate-oldschool-pc-font-pack
+
+    # unscii
+
+    (import ./modules/fonts/my-inconsolata-lgc.nix)
+    # inconsolata-lgc
+    # inconsolata
+  ];
 }
