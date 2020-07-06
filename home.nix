@@ -36,7 +36,9 @@
     # p7zip
 
     # mail
-    isync msmtp mu
+    isync msmtp
+    # Only works in main nixos config
+    # mu
 
     # gimp
     redshift
