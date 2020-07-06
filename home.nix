@@ -5,6 +5,8 @@
 
   programs.home-manager.enable = true;
 
+  # nixpkgs.config.allowUnfree = false;
+
   imports = [ ./device.nix
               ./modules/firefox.nix
               ./modules/notifications.nix
@@ -13,9 +15,6 @@
               ./modules/gpg.nix
               ./modules/visual.nix
             ];
-
-  # Required by spotify
-  nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
     # xfce.xfce4-notifyd
@@ -37,18 +36,20 @@
     # p7zip
 
     # mail
-    isync msmtp
+    isync msmtp mu
 
-    gimp
+    # gimp
     redshift
 
     w3m
 
     shellcheck
 
-    cmake libtool gnumake
+    # cmake libtool gnumake
 
-    haskellPackages.structured-haskell-mode pinentry_emacs libvterm
+    # haskellPackages.structured-haskell-mode
+    pinentry_emacs
+    # libvterm
 
     emacs
 
@@ -59,7 +60,7 @@
 
     imagemagick
 
-    aspell aspellDicts.en aspellDicts.sv # languagetool # jre
+    aspell aspellDicts.en # aspellDicts.sv # languagetool # jre
 
     mpv
 
@@ -90,25 +91,22 @@
     # haskellPackages.ghc-imported-from
     # Applications
 
-    # Closed source
-    spotify
+    # next
 
-    next
-
-    pandoc
-
-    cachix
+    # cachix
 
     # iosevka
-    (import ./modules/fonts/scientifica.nix)
+    # (import ./modules/fonts/scientifica.nix)
     # (import ./modules/fonts/BlockZone.nix)
 
-    ultimate-oldschool-pc-font-pack
+    # ultimate-oldschool-pc-font-pack
 
     # unscii
 
     (import ./modules/fonts/my-inconsolata-lgc.nix)
     # inconsolata-lgc
     # inconsolata
+
+    pwgen
   ];
 }

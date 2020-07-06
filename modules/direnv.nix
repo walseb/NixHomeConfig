@@ -5,5 +5,5 @@
     enableBashIntegration = true;
   };
 
-  services.lorri.enable = true;
+  # services.lorri.enable = true;
 }

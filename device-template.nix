@@ -5,6 +5,7 @@
     # ./modules/games/cataclysm-dda/cataclysm-dda-git-latest.nix
     # ./modules/build-emacs.nix
     # ./modules/art.nix
+    # ./modules/spotify.nix
   ];
   # programs.git = {
   #   signing = {
