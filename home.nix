@@ -79,7 +79,12 @@
 
     # haskellPackages.retrie
 
+    # Haskell formatters
     ormolu
+    # haskellPackages.hindent
+    # haskellPackages.brittany
+    stylish-haskell
+
     nixfmt
 
     nix-prefetch nix-prefetch-git nix-prefetch-github
