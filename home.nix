@@ -23,6 +23,8 @@
     git
     git-lfs
 
+    nix-top
+
     gnupg
 
     pavucontrol
