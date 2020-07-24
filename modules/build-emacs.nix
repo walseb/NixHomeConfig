@@ -54,8 +54,8 @@ in
             repo = "emacs";
 
             # Remember to change BOTH rev and sha256, otherwise it doesn't clone correctly
-            rev = "b3bbd4fd00562578e840fbdaec5ed2000392d9e3";
-            sha256 = "0wrca90xapnwrhg977vjc1rahd60w0dvzwm6q84gd8ildrdgnzql";
+            rev = "8bc8565721739510b3286838f1534f29b8869fc4";
+            sha256 = "1iiv2d8y85wv34gb5xzj4p6vaprbhnd29sp8al0ajci51w5s24xc";
           };
           patches = [];
       });
