@@ -6,6 +6,7 @@
     # ./modules/build-emacs.nix
     # ./modules/art.nix
     # ./modules/spotify.nix
+    # ./modules/spotifyd.nix
   ];
   # programs.git = {
   #   signing = {
