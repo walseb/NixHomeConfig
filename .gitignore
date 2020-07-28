@@ -4,3 +4,4 @@
 !device-template.nix
 !home.nix
 !/modules/
+!/loose-configs/

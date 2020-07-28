@@ -1,14 +1,23 @@
 { config, pkgs, ... }:
 
+# # Unstable packages
+# let
+#   unstable = import
+#     (builtins.fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz)
+#     # reuse the current configuration
+#     { config = config.nixpkgs.config; };
+# in
 {
   home.stateVersion = "20.03";
 
   programs.home-manager.enable = true;
 
-  # nixpkgs.config.allowUnfree = false;
+  nixpkgs.config = {
+    # allowBroken = true;
+    allowUnfree = false;
+  };
 
   imports = [ ./device.nix
-              ./modules/firefox.nix
               ./modules/notifications.nix
               ./modules/git.nix
               ./modules/direnv.nix
@@ -117,5 +126,10 @@
     # inconsolata
 
     pwgen
+
+    # tree-sitter
+
+    xdotool
+    xclip
   ];
 }
