@@ -1,3 +1,6 @@
+(in-package :nyxt/vi-mode)
+(in-package :nyxt/web-mode)
+
 ;; * Simulation keys
 (defun simulate-key (key)
   "Run xdotool key"
@@ -38,9 +41,6 @@
 ;;   (simulate-key-no-modifiers "Tab"))
 
 ;; * Main binds
-(in-package :nyxt/vi-mode)
-(in-package :nyxt/web-mode)
-
 (define-mode my-mode ()
   "My mode"
   ((keymap-scheme
