@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 let
   unstable = import
     (builtins.fetchTarball https://github.com/NixOS/nixpkgs-channels/archive/nixos-unstable.tar.gz)
@@ -6,7 +7,11 @@ let
     { config = config.nixpkgs.config; };
 in
 {
-  services.spotifyd.package = (unstable.spotifyd.override { withMpris = true; withPulseAudio = true; withALSA = false;});
+  # imports = [
+  #   ./build-spotifyd.nix
+  # ];
+  # services.spotifyd.package = pkgs.spotifyd-git;
+  services.spotifyd.package = (unstable.spotifyd.override { withMpris = true; withPulseAudio = true; });
 
   services.spotifyd.enable = true;
 }

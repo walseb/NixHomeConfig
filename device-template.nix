@@ -31,6 +31,8 @@
         password = "";
         # Can't contain spaces
         device_name = "";
+
+        backend = "pulseaudio";
       };
     };
 }
