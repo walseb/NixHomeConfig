@@ -14,16 +14,17 @@
 
   nixpkgs.config = {
     # allowBroken = true;
-    allowUnfree = false;
+    # allowUnfree = false;
   };
 
-  imports = [ ./device.nix
-              ./modules/notifications.nix
-              ./modules/git.nix
-              ./modules/direnv.nix
-              ./modules/gpg.nix
-              ./modules/visual.nix
-            ];
+  imports = [
+    ./device.nix
+    ./modules/notifications.nix
+    ./modules/git.nix
+    ./modules/direnv.nix
+    ./modules/gpg.nix
+    ./modules/visual.nix
+  ];
 
   home.packages = with pkgs; [
     # xfce.xfce4-notifyd
@@ -42,12 +43,14 @@
 
     ripgrep
 
-    atool unzip
+    atool
+    unzip
     # TODO Find replacement
     # p7zip
 
     # mail
-    isync msmtp
+    isync
+    msmtp
     # Only works in main nixos config
     # mu
 
@@ -73,7 +76,8 @@
 
     imagemagick
 
-    aspell aspellDicts.en # aspellDicts.sv # languagetool # jre
+    aspell
+    aspellDicts.en # aspellDicts.sv # languagetool # jre
 
     mpv
 
@@ -84,7 +88,8 @@
     # haskell.compiler.ghc882 # cabal-install
     cabal-install
 
-    hlint haskellPackages.hoogle
+    hlint
+    haskellPackages.hoogle
 
     haskellPackages.hp2pretty # haskellPackages.threadscope # haskellPackages.eventlog2html
 
@@ -98,7 +103,9 @@
 
     nixfmt
 
-    nix-prefetch nix-prefetch-git nix-prefetch-github
+    nix-prefetch
+    nix-prefetch-git
+    nix-prefetch-github
 
     # Used by hlint-refactor-mode
     # haskellPackages.apply-refact
@@ -128,6 +135,7 @@
     pwgen
 
     # tree-sitter
+    # unstable.haskellPackages.tree-sitter-haskell
 
     xdotool
     xclip

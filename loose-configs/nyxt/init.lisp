@@ -1,7 +1,15 @@
+;; * Set search engine
+(define-configuration browser
+  ((search-engines (list
+		    (make-instance 'search-engine
+				   :shortcut "default"
+				   :search-url "https://www.google.com/search?q=~a"
+				   :fallback-url "https://google.com")))))
+
+;; * Simulation keys
 (in-package :nyxt/vi-mode)
 (in-package :nyxt/web-mode)
 
-;; * Simulation keys
 (defun simulate-key (key)
   "Run xdotool key"
   (ignore-errors (uiop:run-program
