@@ -1,4 +1,4 @@
-This is now merged into my main nix config
+This is now merged into my main nixos config
 
 
 
